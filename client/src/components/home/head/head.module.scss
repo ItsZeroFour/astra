@@ -1,0 +1,125 @@
+.head {
+  display: flex;
+  flex-direction: column;
+
+  height: 95vh;
+  width: 100vw;
+  background: var(--color-blue);
+}
+
+.head__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head__left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: 670px;
+
+
+  color: var(--color-white);
+
+  h1 {
+    font-size: 64px;
+    font-family: "Unbounded-md", sans-serif;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .head__buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    a {
+      font-family: "Montserrat-md", sans-serif;
+      font-weight: 500;
+      border-radius: 5px;
+      font-size: 16px;
+
+      &:first-child {
+        padding: 20px 30px;
+        background: #70aefe;
+        color: var(--color-white);
+      }
+
+      &:last-child {
+        padding: 20px 60px;
+        background: var(--color-white);
+        color: var(--color-blue);
+        border: 1px solid var(--color-white);
+
+        transition: all 0.2s ease;
+
+        &:hover {
+          border: 1px solid var(--color-black);
+          color: var(--color-black);
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}
+
+.head__right {
+  width: 760px;
+  height: 710px;
+  background: url("../../../assets/images/head/sphere.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.head__right__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 20px;
+  width: 60%;
+
+  img {
+    &:nth-child(1) {
+      width: 90px;
+      height: 105px;
+      object-fit: cover;
+      margin-top: auto;
+    }
+
+    &:nth-child(2) {
+      width: 140px;
+      height: 195px;
+      object-fit: cover;
+    }
+
+    &:nth-child(3) {
+      width: 75px;
+      height: 85px;
+      object-fit: cover;
+      margin-top: auto;
+    }
+
+    &:nth-child(4) {
+      width: 200px;
+      height: 225px;
+      object-fit: cover;
+    }
+
+    &:nth-child(5) {
+      width: 120px;
+      height: 140px;
+      object-fit: cover;
+    }
+  }
+}
