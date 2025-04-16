@@ -21,6 +21,8 @@ body {
 
   background: var(--color-white);
   color: var(--color-black);
+
+  overflow-x: hidden;
 }
 
 html {
@@ -61,4 +63,15 @@ a {
 ul,
 li {
   list-style-type: none;
+}
+
+.slick-dots {
+  li {
+    button {
+      &::before {
+        font-size: 12px;
+        color: var(--color-blue) !important;
+      }
+    }
+  }
 }
