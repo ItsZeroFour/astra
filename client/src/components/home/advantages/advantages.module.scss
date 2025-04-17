@@ -118,6 +118,10 @@
     justify-content: space-between;
     margin-top: 30px;
 
+    .service__slide {
+      padding-top: 10px;
+    }
+
     .service__item {
       display: flex;
       flex-direction: column;

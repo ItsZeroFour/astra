@@ -32,6 +32,16 @@ html {
   // font-size: calc(6px + (20 - 6) * ((100vw - 600px) / (1920 - 600)));
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
 ::-webkit-scrollbar {
   background: none;
   width: 0px;

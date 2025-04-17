@@ -25,6 +25,7 @@ const Header = () => {
     } else {
       document.body.style.overflow = "auto";
     }
+
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -34,14 +35,16 @@ const Header = () => {
     <header className={style.header}>
       <div className="container">
         <div className={style.header__wrapper}>
-          <Link to="/">
+          <Link to="/" onClick={() => setOpenMenu(false)}>
             <img src={logo} alt="лого астра" />
           </Link>
 
           <nav>
             <ul>
               <li>
-                <Link to="/">О КОМПАНИИ</Link>
+                <Link to="/" onClick={() => setOpenMenu(false)}>
+                  О КОМПАНИИ
+                </Link>
               </li>
 
               <li
@@ -62,15 +65,63 @@ const Header = () => {
                       transition={{ duration: 0.2 }}
                     >
                       <li>
-                        <Link to="/">Системы безопасности</Link>
+                        <Link to="/service" onClick={() => setOpenMenu(false)}>
+                          Проектирование систем безопасности
+                        </Link>
                       </li>
 
                       <li>
-                        <Link to="/">Автоматика</Link>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Видеонаблюдение
+                        </Link>
                       </li>
 
                       <li>
-                        <Link to="/">Двери</Link>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Системы контроля доступа
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Электромонтаж
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Локально-вычислительные системы
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Пожарная и охранная сигнализация
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          системы оповещения
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          системы вентилляции
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Техническое обслуживание
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Изготовление металлоконструкций
+                        </Link>
                       </li>
                     </motion.ul>
                   )}
@@ -78,11 +129,15 @@ const Header = () => {
               </li>
 
               <li>
-                <Link to="/">ТАРИФЫ</Link>
+                <Link to="/tarifs" onClick={() => setOpenMenu(false)}>
+                  ТАРИФЫ
+                </Link>
               </li>
 
               <li>
-                <Link to="/">КОНТАКТЫ</Link>
+                <Link to="/contacts" onClick={() => setOpenMenu(false)}>
+                  КОНТАКТЫ
+                </Link>
               </li>
             </ul>
           </nav>
@@ -102,7 +157,9 @@ const Header = () => {
             <nav>
               <ul>
                 <li>
-                  <Link to="/">О КОМПАНИИ</Link>
+                  <Link to="/" onClick={() => setOpenMenu(false)}>
+                    О КОМПАНИИ
+                  </Link>
                 </li>
 
                 <li>
@@ -115,26 +172,78 @@ const Header = () => {
                   {openMenuServices && (
                     <ul>
                       <li>
-                        <Link to="/">Системы безопасности</Link>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Проектирование систем безопасности
+                        </Link>
                       </li>
 
                       <li>
-                        <Link to="/">Автоматика</Link>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Видеонаблюдение
+                        </Link>
                       </li>
 
                       <li>
-                        <Link to="/">Двери</Link>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Системы контроля доступа
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Электромонтаж
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Локально-вычислительные системы
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Пожарная и охранная сигнализация
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Cистемы оповещения
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Cистемы вентилляции
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Техническое обслуживание
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/" onClick={() => setOpenMenu(false)}>
+                          Изготовление металлоконструкций
+                        </Link>
                       </li>
                     </ul>
                   )}
                 </li>
 
                 <li>
-                  <Link to="/">ТАРИФЫ</Link>
+                  <Link to="/tarifs" onClick={() => setOpenMenu(false)}>
+                    ТАРИФЫ
+                  </Link>
                 </li>
 
                 <li>
-                  <Link to="/">КОНТАКТЫ</Link>
+                  <Link to="/contacts" onClick={() => setOpenMenu(false)}>
+                    КОНТАКТЫ
+                  </Link>
                 </li>
               </ul>
             </nav>

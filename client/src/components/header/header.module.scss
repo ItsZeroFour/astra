@@ -150,23 +150,29 @@
   padding-top: 40px;
 
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* или можно использовать max-height: 100vh; */
   top: 110px;
   background: var(--color-white);
   left: 0;
   position: absolute;
 
+  z-index: 9999;
+
+  /* Добавьте эти свойства для скролла */
+  overflow-y: auto; /* Включаем вертикальный скролл */
+  overscroll-behavior-y: contain; /* Предотвращает скролл основной страницы при достижении границ меню */
+
   nav {
     ul {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 10px;
 
       li {
         text-align: center;
 
         a {
-          font-size: 24px;
+          font-size: 16px;
           font-weight: 500;
           font-family: "Montserrat-md", sans-serif;
         }
@@ -175,14 +181,21 @@
           background: none;
           text-align: center;
 
-          font-size: 24px;
+          font-size: 16px;
           font-weight: 500;
           font-family: "Montserrat-md", sans-serif;
         }
 
         ul {
-          margin-top: 30px;
-          margin-bottom: 20px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          gap: 15px !important;
+
+          li {
+            a {
+              font-size: 14px;
+            }
+          }
         }
       }
     }
