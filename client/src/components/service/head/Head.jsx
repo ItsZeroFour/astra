@@ -1,27 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import style from "./head.module.scss";
-import headImg from "../../../assets/images/services/head.png";
 
-const Head = () => {
-  return (
-    <section
-      className={style.head}
-      style={{
-        background: `url(${headImg})`,
+const Head = ({ service }) => {
+  const [bgStyle, setBgStyle] = useState({});
+
+  useEffect(() => {
+    if (service.image?.url) {
+      setBgStyle({
+        backgroundImage: `url(http://localhost:1337${service.image.url})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",
-      }}
-    >
+      });
+    }
+  }, [service.image?.url]);
+
+  return (
+    <section className={style.head} style={bgStyle}>
       <div className="container">
         <div className={style.head__wrapper}>
-          <h1>Видеонаблюдение</h1>
-          <p>
-            Наблюдение онлайн, архивирование видеоданных, видеоаналитика с
-            помощью CCTV систем высокой четкости
-          </p>
+          <h1>{service.title}</h1>
+          <p>{service.description}</p>
 
-          <p>Главная / Услуги/ Видеонаблюдение</p>
+          <p>Главная / Услуги/ {service.title}</p>
         </div>
       </div>
     </section>

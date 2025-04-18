@@ -1,5 +1,6 @@
 .completed_works {
   margin-top: 90px;
+  margin-bottom: 90px;
 }
 
 .completed_works__wrapper {
@@ -39,6 +40,12 @@
         gap: 5px;
         z-index: 2;
         margin-bottom: 20px;
+      }
+
+      & > img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
       }
 
       .completed_works__item__text {

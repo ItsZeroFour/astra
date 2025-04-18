@@ -9,12 +9,11 @@ import advantagesIcon3 from "../../../assets/icons/advantages/advantages-icon-3.
 import advantagesIcon4 from "../../../assets/icons/advantages/advantages-icon-4.svg";
 import advantagesIcon5 from "../../../assets/icons/advantages/advantages-icon-5.svg";
 
-import servicesImg from "../../../assets/images/services/services-img-1.png";
 import arrowRight from "../../../assets/icons/arrow-right.svg";
 import arrowRight2 from "../../../assets/icons/arrow-right-2.svg";
 import { Link } from "react-router-dom";
 
-const Advantages = () => {
+const Advantages = ({ services }) => {
   // Slider settings
   const sliderSettings = {
     dots: true,
@@ -39,42 +38,6 @@ const Advantages = () => {
       },
     ],
   };
-
-  // Service items data
-  const services = [
-    {
-      id: 1,
-      title: "Пожарная сигнализация",
-      description:
-        "Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
-      image: servicesImg,
-      link: "/",
-    },
-    {
-      id: 2,
-      title: "Видеонаблюдение",
-      description:
-        "Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
-      image: servicesImg,
-      link: "/",
-    },
-    {
-      id: 3,
-      title: "Контроль доступа",
-      description:
-        "Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
-      image: servicesImg,
-      link: "/",
-    },
-    {
-      id: 4,
-      title: "Охранная сигнализация",
-      description:
-        "Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
-      image: servicesImg,
-      link: "/",
-    },
-  ];
 
   return (
     <section className={style.advantages}>
@@ -117,17 +80,17 @@ const Advantages = () => {
           <h2>УСЛУГИ</h2>
 
           <Slider {...sliderSettings} className={style.services__slider}>
-            {services.map((service) => (
+            {services.slice(0, 8).map((service) => (
               <div key={service.id} className={style.service__slide}>
                 <div
                   className={style.service__item}
                   style={{
-                    backgroundImage: `url(${service.image})`,
+                    backgroundImage: `url(http://localhost:1337${service.image.url})`,
                   }}
                 >
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
-                  <Link to={service.link}>
+                  <Link to={`/service/${service.id}`}>
                     ПОДРОБНЕЕ <img src={arrowRight} alt="Подробнее" />
                   </Link>
                 </div>
@@ -135,7 +98,7 @@ const Advantages = () => {
             ))}
           </Slider>
 
-          <Link to="/services">
+          <Link to={`/services`}>
             КО ВСЕМ УСЛУГАМ <img src={arrowRight2} alt="КО ВСЕМ УСЛУГАМ" />
           </Link>
         </div>

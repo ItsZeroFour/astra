@@ -1,0 +1,31 @@
+.notfound {
+  height: 100vh;
+}
+
+.notfound__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 70vh;
+
+  h1 {
+    font-size: 169px;
+    font-family: "Unbounded-bd", sans-serif;
+    font-weight: 700;
+
+    @media (max-width: 560px) {
+      font-size: 96px;
+    }
+  }
+
+  a {
+    margin-top: 40px;
+    padding: 10px 60px;
+    background: var(--color-blue);
+    color: var(--color-white);
+
+    border-radius: 5px;
+  }
+}

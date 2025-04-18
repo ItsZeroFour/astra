@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import angleDown from "../../assets/icons/angle-down.svg";
 import angleDown2 from "../../assets/icons/angle-down-2.svg";
 
-const Header = () => {
+const Header = ({ services }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const [openMenuServices, setOpenMenuServices] = useState(false);
@@ -64,65 +64,16 @@ const Header = () => {
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <li>
-                        <Link to="/service" onClick={() => setOpenMenu(false)}>
-                          Проектирование систем безопасности
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Видеонаблюдение
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Системы контроля доступа
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Электромонтаж
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Локально-вычислительные системы
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Пожарная и охранная сигнализация
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          системы оповещения
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          системы вентилляции
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Техническое обслуживание
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Изготовление металлоконструкций
-                        </Link>
-                      </li>
+                      {services.map((item) => (
+                        <li>
+                          <Link
+                            to={`/service/${item.id}`}
+                            onClick={() => setOpenMenu(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
                     </motion.ul>
                   )}
                 </AnimatePresence>
@@ -171,65 +122,16 @@ const Header = () => {
 
                   {openMenuServices && (
                     <ul>
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Проектирование систем безопасности
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Видеонаблюдение
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Системы контроля доступа
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Электромонтаж
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Локально-вычислительные системы
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Пожарная и охранная сигнализация
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Cистемы оповещения
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Cистемы вентилляции
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Техническое обслуживание
-                        </Link>
-                      </li>
-
-                      <li>
-                        <Link to="/" onClick={() => setOpenMenu(false)}>
-                          Изготовление металлоконструкций
-                        </Link>
-                      </li>
+                      {services.map((item) => (
+                        <li>
+                          <Link
+                            to={`/service/${item.id}`}
+                            onClick={() => setOpenMenu(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   )}
                 </li>
