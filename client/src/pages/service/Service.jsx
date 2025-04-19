@@ -12,6 +12,10 @@ const Service = ({ services }) => {
   const { id } = useParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const filterItems = services.filter((item) => item.id === +id)[0];
 
     setService(filterItems);

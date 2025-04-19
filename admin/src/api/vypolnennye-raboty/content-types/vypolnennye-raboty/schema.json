@@ -30,6 +30,22 @@
     },
     "full_description": {
       "type": "text"
+    },
+    "title_about": {
+      "type": "string"
+    },
+    "text_about": {
+      "type": "text"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

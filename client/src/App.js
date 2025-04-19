@@ -8,6 +8,8 @@ import Tarifs from "./pages/tarifs/Tarifs";
 import Service from "./pages/service/Service";
 import axios from "axios";
 import CompletedWorks from "./pages/completed_works/CompletedWorks";
+import Services from "./pages/services/Services";
+import AboutWork from "./pages/about_work/AboutWork";
 
 function App() {
   const [services, setServices] = useState(null);
@@ -17,7 +19,7 @@ function App() {
     const fetchServices = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/uslugis?populate=image"
+          "http://localhost:1337/api/uslugis?populate=*"
         );
         setServices(response.data.data);
       } catch (error) {
@@ -32,7 +34,7 @@ function App() {
     const fetchServices = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/vypolnennye-raboties?populate=image"
+          "http://localhost:1337/api/vypolnennye-raboties?populate=*"
         );
         setCompletedWorks(response.data.data);
       } catch (error) {
@@ -59,10 +61,21 @@ function App() {
                 />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/tarifs" element={<Tarifs />} />
-                <Route path="/completed-works" element={<CompletedWorks completedWorks={completedWorks} />} />
+                <Route
+                  path="/services"
+                  element={<Services services={services} />}
+                />
+                <Route
+                  path="/completed-works"
+                  element={<CompletedWorks completedWorks={completedWorks} />}
+                />
                 <Route
                   path="/service/:id"
                   element={<Service services={services} />}
+                />
+                <Route
+                  path="/work/:id"
+                  element={<AboutWork completedWorks={completedWorks} />}
                 />
               </Routes>
             </main>

@@ -423,6 +423,10 @@ export interface ApiVypolnennyeRabotyVypolnennyeRaboty
     description: Schema.Attribute.Text;
     full_description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -430,7 +434,9 @@ export interface ApiVypolnennyeRabotyVypolnennyeRaboty
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    text_about: Schema.Attribute.Text;
     title: Schema.Attribute.String;
+    title_about: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

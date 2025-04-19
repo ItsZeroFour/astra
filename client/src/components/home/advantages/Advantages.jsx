@@ -89,7 +89,11 @@ const Advantages = ({ services }) => {
                   }}
                 >
                   <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                  <p>
+                    {service.description.length > 150
+                      ? `${service.description.slice(0, 150)}...`
+                      : service.description}
+                  </p>
                   <Link to={`/service/${service.id}`}>
                     ПОДРОБНЕЕ <img src={arrowRight} alt="Подробнее" />
                   </Link>
