@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "spisok_tarifovs",
+  "info": {
+    "singularName": "spisok-tarifov",
+    "pluralName": "spisok-tarifovs",
+    "displayName": "Список тарифов"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "price": {
+      "type": "string"
+    }
+  }
+}

@@ -13,7 +13,26 @@ import arrowRight from "../../../assets/icons/arrow-right.svg";
 import arrowRight2 from "../../../assets/icons/arrow-right-2.svg";
 import { Link } from "react-router-dom";
 
-const Advantages = ({ services }) => {
+const Advantages = ({
+  services,
+
+  advantages_title,
+
+  advantages_item_1_text,
+  advantages_item_1_icon,
+
+  advantages_item_2_text,
+  advantages_item_2_icon,
+
+  advantages_item_3_text,
+  advantages_item_3_icon,
+
+  advantages_item_4_text,
+  advantages_item_4_icon,
+
+  advantages_item_5_text,
+  advantages_item_5_icon,
+}) => {
   // Slider settings
   const sliderSettings = {
     dots: true,
@@ -43,35 +62,47 @@ const Advantages = ({ services }) => {
     <section className={style.advantages}>
       <div className="container">
         <div className={style.advantages__wrapper}>
-          <h2>НАШИ ПРЕИМУЩЕСТВА</h2>
+          <h2>{advantages_title}</h2>
 
           <ul>
             <li>
-              <img src={advantagesIcon1} alt="Комплексный подход" />
-              <p>Комплексный подход</p>
+              <img
+                src={`http://localhost:1337${advantages_item_1_icon.url}`}
+                alt={advantages_item_1_text}
+              />
+              <p>{advantages_item_1_text}</p>
             </li>
 
             <li>
               <img
-                src={advantagesIcon2}
-                alt="Собственное производство компонетов"
+                src={`http://localhost:1337${advantages_item_2_icon.url}`}
+                alt={advantages_item_2_text}
               />
-              <p>Собственное производство компонетов</p>
+              <p>{advantages_item_2_text}</p>
             </li>
 
             <li>
-              <img src={advantagesIcon3} alt="Гибкие конфигурации" />
-              <p>Гибкие конфигурации</p>
+              <img
+                src={`http://localhost:1337${advantages_item_3_icon.url}`}
+                alt={advantages_item_3_text}
+              />
+              <p>{advantages_item_3_text}</p>
             </li>
 
             <li>
-              <img src={advantagesIcon4} alt="Гарантия и сервис" />
-              <p>Гарантия и сервис</p>
+              <img
+                src={`http://localhost:1337${advantages_item_4_icon.url}`}
+                alt={advantages_item_4_text}
+              />
+              <p>{advantages_item_4_text}</p>
             </li>
 
             <li>
-              <img src={advantagesIcon5} alt='Работаем "на месте"' />
-              <p>Работаем "на месте"</p>
+              <img
+                src={`http://localhost:1337${advantages_item_5_icon.url}`}
+                alt={advantages_item_5_text}
+              />
+              <p>{advantages_item_5_text}</p>
             </li>
           </ul>
         </div>

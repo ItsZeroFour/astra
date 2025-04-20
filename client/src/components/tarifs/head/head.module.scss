@@ -112,11 +112,18 @@
 
         &:last-child {
           text-wrap: nowrap;
+          width: 20%;
+          text-align: right;
+        }
+
+        &:first-child {
+          width: 27%;
         }
 
         &:nth-child(2) {
           font-size: 12px;
           width: 290px;
+          text-align: left;
           padding-right: 10px;
           padding-left: 10px;
 

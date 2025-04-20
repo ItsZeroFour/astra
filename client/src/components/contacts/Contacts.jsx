@@ -7,7 +7,21 @@ import mail from "../../assets/icons/contacts/mail.svg";
 import clock from "../../assets/icons/contacts/clock.svg";
 import { Link } from "react-router-dom";
 
-const Contacts = () => {
+const Contacts = ({ contacts }) => {
+  const formatPhoneNumber = (phone) => {
+    if (!phone) return "";
+
+    const cleaned = ("" + phone).replace(/\D/g, "");
+
+    const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})$/);
+
+    if (match) {
+      return `+${match[1]} (${match[2]}) ${match[3]}-${match[4]}-${match[5]}`;
+    }
+
+    return phone;
+  };
+
   return (
     <section className={style.contacts}>
       <div className="container">
@@ -15,18 +29,17 @@ const Contacts = () => {
           <div className={style.contacts__left}>
             <ul>
               <li>
-                <img
-                  src={location}
-                  alt="Адрес: г. Брянск, ул. Пролетарская, д. 1"
-                />
-                <p>Адрес: г. Брянск, ул. Пролетарская, д. 1</p>
+                <img src={location} alt={`Адрес: ${contacts.address}`} />
+                <p>Адрес: {contacts.address}</p>
               </li>
 
               <li>
                 <img src={phone} alt="телефон" />
                 <p>
                   Телефон:{" "}
-                  <Link to="tel:+74832744302"> +7 (4832) 74-43-02</Link>
+                  <Link to={`tel:${contacts.phone}`}>
+                    {formatPhoneNumber(contacts.phone)}
+                  </Link>
                 </p>
               </li>
 
@@ -34,21 +47,19 @@ const Contacts = () => {
                 <img src={mail} alt="Почта" />
                 <p>
                   Email:{" "}
-                  <Link to="mailto:info@astrabryansk.ru">
-                    info@astrabryansk.ru
-                  </Link>
+                  <Link to={`mailto:${contacts.mail}`}>{contacts.mail}</Link>
                 </p>
               </li>
 
               <li>
                 <img src={clock} alt="Часы" />
-                <p>Часы работы: Пн-Пт 9:00–18:00</p>
+                <p>Часы работы: {contacts.time}</p>
               </li>
             </ul>
           </div>
           <div className={style.contacts__right}>
             <iframe
-              src="https://yandex.ru/map-widget/v1/?ll=34.358880%2C53.241811&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjAwMzE2NhJC0KDQvtGB0YHQuNGPLCDQkdGA0Y_QvdGB0LosINCf0YDQvtC70LXRgtCw0YDRgdC60LDRjyDRg9C70LjRhtCwLCAxIgoNfm8JQhWd91RC&z=17"
+              src={contacts.map_link}
               width="750"
               height="400"
               frameborder="1"

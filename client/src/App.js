@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
 import Home from "./pages/home/Home";
@@ -10,10 +10,12 @@ import axios from "axios";
 import CompletedWorks from "./pages/completed_works/CompletedWorks";
 import Services from "./pages/services/Services";
 import AboutWork from "./pages/about_work/AboutWork";
+import Loader from "./components/loader/Loader";
 
 function App() {
   const [services, setServices] = useState(null);
   const [completedWorks, setCompletedWorks] = useState(null);
+  const [contacts, setContacts] = useState(null);
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -45,21 +47,53 @@ function App() {
     fetchServices();
   }, []);
 
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:1337/api/kontakty?populate=*"
+        );
+        setContacts(response.data.data);
+      } catch (error) {
+        console.error("Ошибка при загрузке услуг:", error);
+      }
+    };
+
+    fetchContacts();
+  }, []);
+
+  const targetRef = useRef(null);
+
+  const handleClick = () => {
+    targetRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="App">
       <div className="page">
-        {services && completedWorks ? (
+        {services && completedWorks && contacts ? (
           <React.Fragment>
-            <Header services={services} />
+            <Header
+              services={services}
+              logo={contacts?.logo.url}
+              handleClick={handleClick}
+            />
             <main>
               <Routes>
                 <Route
                   path="/"
                   element={
-                    <Home services={services} completedWorks={completedWorks} />
+                    <Home
+                      services={services}
+                      completedWorks={completedWorks}
+                      targetRef={targetRef}
+                    />
                   }
                 />
-                <Route path="/contacts" element={<Contacts />} />
+                <Route
+                  path="/contacts"
+                  element={<Contacts contacts={contacts} />}
+                />
                 <Route path="/tarifs" element={<Tarifs />} />
                 <Route
                   path="/services"
@@ -79,10 +113,10 @@ function App() {
                 />
               </Routes>
             </main>
-            <Footer />
+            <Footer contacts={contacts} handleClick={handleClick} />
           </React.Fragment>
         ) : (
-          <p>Загрузка...</p>
+          <Loader />
         )}
       </div>
     </div>

@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import Contacts from "../../components/contacts/Contacts";
 
-const ContactsPage = () => {
+const ContactsPage = ({ contacts }) => {
   return (
     <React.Fragment>
-      <Contacts />
+      <Contacts contacts={contacts} />
     </React.Fragment>
   );
 };

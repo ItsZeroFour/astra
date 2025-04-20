@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import style from "./header.module.scss";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.svg";
 import { motion, AnimatePresence } from "framer-motion";
 import angleDown from "../../assets/icons/angle-down.svg";
 import angleDown2 from "../../assets/icons/angle-down-2.svg";
 
-const Header = ({ services }) => {
+const Header = ({ services, logo, handleClick }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const [openMenuServices, setOpenMenuServices] = useState(false);
@@ -36,13 +35,19 @@ const Header = ({ services }) => {
       <div className="container">
         <div className={style.header__wrapper}>
           <Link to="/" onClick={() => setOpenMenu(false)}>
-            <img src={logo} alt="лого астра" />
+            <img src={`http://localhost:1337${logo}`} alt="лого астра" />
           </Link>
 
           <nav>
             <ul>
               <li>
-                <Link to="/" onClick={() => setOpenMenu(false)}>
+                <Link
+                  to="/"
+                  onClick={() => {
+                    handleClick();
+                    setOpenMenu(false);
+                  }}
+                >
                   О КОМПАНИИ
                 </Link>
               </li>
@@ -108,7 +113,13 @@ const Header = ({ services }) => {
             <nav>
               <ul>
                 <li>
-                  <Link to="/" onClick={() => setOpenMenu(false)}>
+                  <Link
+                    to="/"
+                    onClick={() => {
+                      handleClick();
+                      setOpenMenu(false);
+                    }}
+                  >
                     О КОМПАНИИ
                   </Link>
                 </li>

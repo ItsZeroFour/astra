@@ -3,19 +3,16 @@ import style from "./head.module.scss";
 import arrowBottom from "../../../assets/icons/arrow-bottom.svg";
 import { Link } from "react-router-dom";
 
-const Head = () => {
+const Head = ({ tarifs, listOfTarifs }) => {
+  console.log(listOfTarifs);
+
   return (
     <section className={style.head}>
       <div className="container">
         <div className={style.head__wrapper}>
           <div className={style.head__top}>
-            <h1>Тарифы</h1>
-            <p>
-              Надёжная система требует не только качественной установки, но и
-              регулярного обслуживания. Мы предлагаем несколько тарифных планов,
-              чтобы вы могли выбрать оптимальный уровень поддержки — от базовой
-              профилактики до круглосуточной технической поддержки.
-            </p>
+            <h1>{tarifs.title}</h1>
+            <p>{tarifs.text}</p>
 
             <Link to="/">
               <img src={arrowBottom} alt="arrow" />
@@ -30,32 +27,13 @@ const Head = () => {
                 <th>Цена</th>
               </tr>
 
-              <tr>
-                <td>Обслуживание домофонов</td>
-                <td>
-                  Reference site about Lorem Ipsum, giving information on its
-                  origins, as well as a random Lipsum generator.
-                </td>
-                <td>от 40 руб/ месяц</td>
-              </tr>
-
-              <tr>
-                <td>Обслуживание домофонов</td>
-                <td>
-                  Reference site about Lorem Ipsum, giving information on its
-                  origins, as well as a random Lipsum generator.
-                </td>
-                <td>от 40 руб/ месяц</td>
-              </tr>
-
-              <tr>
-                <td>Обслуживание домофонов</td>
-                <td>
-                  Reference site about Lorem Ipsum, giving information on its
-                  origins, as well as a random Lipsum generator.
-                </td>
-                <td>от 40 руб/ месяц</td>
-              </tr>
+              {listOfTarifs.map((item) => (
+                <tr>
+                  <td>{item.title}</td>
+                  <td>{item.text}</td>
+                  <td>{item.price}</td>
+                </tr>
+              ))}
             </table>
           </div>
         </div>

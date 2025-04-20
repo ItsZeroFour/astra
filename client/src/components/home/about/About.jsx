@@ -1,29 +1,43 @@
 import React from "react";
 import style from "./about.module.scss";
-import aboutImg from "../../../assets/images/about/about-img.png";
-import aboutListItemIcon1 from "../../../assets/icons/about/hourglass.svg";
 
-const About = () => {
+const About = ({
+  about_title,
+  about_text,
+  about_image,
+  about_item_1_title,
+  about_item_1_text,
+  about_item_1_icon,
+
+  about_item_2_title,
+  about_item_2_text,
+  about_item_2_icon,
+
+  about_item_3_title,
+  about_item_3_text,
+  about_item_3_icon,
+
+  about_item_4_title,
+  about_item_4_text,
+  about_item_4_icon,
+
+  targetRef,
+}) => {
   return (
-    <section className={style.about}>
+    <section className={style.about} id="about" ref={targetRef}>
       <div className="container">
         <div className={style.about__wrapper}>
           <div className={style.about__top}>
             <div className={style.about__top__left}>
-              <h2>О КОМПАНИИ</h2>
-              <p>
-                Мы — команда профессионалов, специализирующаяся на
-                проектировании, монтаже и обслуживании охранных систем,
-                видеонаблюдения и домофонов. Обеспечиваем комплексную
-                безопасность объектов любой сложности.Также изготавливаем
-                надежные металлоконструкции и двери под заказ — от идей до
-                готового решения. Качество, точность и долговечность — наш
-                стандарт.
-              </p>
+              <h2>{about_title}</h2>
+              <p>{about_text}</p>
             </div>
 
             <div className={style.about__top__right}>
-              <img src={aboutImg} alt="about" />
+              <img
+                src={`http://localhost:1337${about_image.url}`}
+                alt="about"
+              />
             </div>
           </div>
 
@@ -31,61 +45,53 @@ const About = () => {
             <ul>
               <li className={style.about__main__item}>
                 <div className={style.aboutListItemIcon}>
-                  <img src={aboutListItemIcon1} alt="30 лет на рынке" />
+                  <img
+                    src={`http://localhost:1337${about_item_1_icon.url}`}
+                    alt={about_item_1_title}
+                  />
                 </div>
                 <div className={style.about__main__content}>
-                  <h4>30 лет на рынке</h4>
-                  <p>
-                    Наша компания успешно работает в сфере охранных систем и
-                    металлоконструкций уже три десятилетия. Такой опыт — это не
-                    просто цифра, а гарантия стабильности, качества и доверия со
-                    стороны клиентов.
-                  </p>
+                  <h4>{about_item_1_title}</h4>
+                  <p>{about_item_1_text}</p>
                 </div>
               </li>
 
               <li className={style.about__main__item}>
                 <div className={style.aboutListItemIcon}>
-                  <img src={aboutListItemIcon1} alt="30 лет на рынке" />
+                  <img
+                    src={`http://localhost:1337${about_item_2_icon.url}`}
+                    alt={about_item_2_title}
+                  />
                 </div>
                 <div className={style.about__main__content}>
-                  <h4>30 лет на рынке</h4>
-                  <p>
-                    Наша компания успешно работает в сфере охранных систем и
-                    металлоконструкций уже три десятилетия. Такой опыт — это не
-                    просто цифра, а гарантия стабильности, качества и доверия со
-                    стороны клиентов.
-                  </p>
+                  <h4>{about_item_2_title}</h4>
+                  <p>{about_item_2_text}</p>
                 </div>
               </li>
 
               <li className={style.about__main__item}>
                 <div className={style.aboutListItemIcon}>
-                  <img src={aboutListItemIcon1} alt="30 лет на рынке" />
+                  <img
+                    src={`http://localhost:1337${about_item_3_icon.url}`}
+                    alt={about_item_3_title}
+                  />
                 </div>
                 <div className={style.about__main__content}>
-                  <h4>30 лет на рынке</h4>
-                  <p>
-                    Наша компания успешно работает в сфере охранных систем и
-                    металлоконструкций уже три десятилетия. Такой опыт — это не
-                    просто цифра, а гарантия стабильности, качества и доверия со
-                    стороны клиентов.
-                  </p>
+                  <h4>{about_item_3_title}</h4>
+                  <p>{about_item_3_text}</p>
                 </div>
               </li>
 
               <li className={style.about__main__item}>
                 <div className={style.aboutListItemIcon}>
-                  <img src={aboutListItemIcon1} alt="30 лет на рынке" />
+                  <img
+                    src={`http://localhost:1337${about_item_4_icon.url}`}
+                    alt={about_item_4_title}
+                  />
                 </div>
                 <div className={style.about__main__content}>
-                  <h4>30 лет на рынке</h4>
-                  <p>
-                    Наша компания успешно работает в сфере охранных систем и
-                    металлоконструкций уже три десятилетия. Такой опыт — это не
-                    просто цифра, а гарантия стабильности, качества и доверия со
-                    стороны клиентов.
-                  </p>
+                  <h4>{about_item_4_title}</h4>
+                  <p>{about_item_4_text}</p>
                 </div>
               </li>
             </ul>

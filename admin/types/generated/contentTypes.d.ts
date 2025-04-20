@@ -369,6 +369,251 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGlavnayaGlavnaya extends Struct.SingleTypeSchema {
+  collectionName: 'glavnayas';
+  info: {
+    description: '';
+    displayName: '\u0413\u043B\u0430\u0432\u043D\u0430\u044F';
+    pluralName: 'glavnayas';
+    singularName: 'glavnaya';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    about_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    about_item_1_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    about_item_1_text: Schema.Attribute.Text;
+    about_item_1_title: Schema.Attribute.String;
+    about_item_2_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    about_item_2_text: Schema.Attribute.Text;
+    about_item_2_title: Schema.Attribute.String;
+    about_item_3_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    about_item_3_text: Schema.Attribute.Text;
+    about_item_3_title: Schema.Attribute.String;
+    about_item_4_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    about_item_4_text: Schema.Attribute.String;
+    about_item_4_title: Schema.Attribute.String;
+    about_text: Schema.Attribute.Text;
+    about_title: Schema.Attribute.String;
+    advantages_item_1_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    advantages_item_1_text: Schema.Attribute.String;
+    advantages_item_2_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    advantages_item_2_text: Schema.Attribute.String;
+    advantages_item_3_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    advantages_item_3_text: Schema.Attribute.String;
+    advantages_item_4_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    advantages_item_4_text: Schema.Attribute.String;
+    advantages_item_5_icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    advantages_item_5_text: Schema.Attribute.String;
+    advantages_title: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    head_images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    head_text: Schema.Attribute.Text;
+    head_title: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::glavnaya.glavnaya'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiKontaktyKontakty extends Struct.SingleTypeSchema {
+  collectionName: 'kontakties';
+  info: {
+    description: '';
+    displayName: '\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B';
+    pluralName: 'kontakties';
+    singularName: 'kontakty';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::kontakty.kontakty'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    mail: Schema.Attribute.Email;
+    map_link: Schema.Attribute.Text;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    telegram_link: Schema.Attribute.String;
+    time: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vk_link: Schema.Attribute.String;
+    whatsapp_link: Schema.Attribute.String;
+  };
+}
+
+export interface ApiSpisokTarifovSpisokTarifov
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'spisok_tarifovs';
+  info: {
+    displayName: '\u0421\u043F\u0438\u0441\u043E\u043A \u0442\u0430\u0440\u0438\u0444\u043E\u0432';
+    pluralName: 'spisok-tarifovs';
+    singularName: 'spisok-tarifov';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::spisok-tarifov.spisok-tarifov'
+    > &
+      Schema.Attribute.Private;
+    price: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStraniczaUslugStraniczaUslug
+  extends Struct.SingleTypeSchema {
+  collectionName: 'stranicza_uslugs';
+  info: {
+    displayName: '\u0421\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u0443\u0441\u043B\u0443\u0433';
+    pluralName: 'stranicza-uslugs';
+    singularName: 'stranicza-uslug';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::stranicza-uslug.stranicza-uslug'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStraniczaVypolnennyhRabotStraniczaVypolnennyhRabot
+  extends Struct.SingleTypeSchema {
+  collectionName: 'stranicza_vypolnennyh_rabots';
+  info: {
+    displayName: '\u0421\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043D\u044B\u0445 \u0440\u0430\u0431\u043E\u0442';
+    pluralName: 'stranicza-vypolnennyh-rabots';
+    singularName: 'stranicza-vypolnennyh-rabot';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::stranicza-vypolnennyh-rabot.stranicza-vypolnennyh-rabot'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTarifyTarify extends Struct.SingleTypeSchema {
+  collectionName: 'tarifies';
+  info: {
+    description: '';
+    displayName: '\u0422\u0430\u0440\u0438\u0444\u044B';
+    pluralName: 'tarifies';
+    singularName: 'tarify';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    about_advantages_1: Schema.Attribute.String;
+    about_advantages_2: Schema.Attribute.String;
+    about_advantages_3: Schema.Attribute.String;
+    about_advantages_4: Schema.Attribute.String;
+    about_advantages_5: Schema.Attribute.String;
+    about_text: Schema.Attribute.Text;
+    about_title: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tarify.tarify'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiUslugiUslugi extends Struct.CollectionTypeSchema {
   collectionName: 'uslugis';
   info: {
@@ -952,6 +1197,12 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::glavnaya.glavnaya': ApiGlavnayaGlavnaya;
+      'api::kontakty.kontakty': ApiKontaktyKontakty;
+      'api::spisok-tarifov.spisok-tarifov': ApiSpisokTarifovSpisokTarifov;
+      'api::stranicza-uslug.stranicza-uslug': ApiStraniczaUslugStraniczaUslug;
+      'api::stranicza-vypolnennyh-rabot.stranicza-vypolnennyh-rabot': ApiStraniczaVypolnennyhRabotStraniczaVypolnennyhRabot;
+      'api::tarify.tarify': ApiTarifyTarify;
       'api::uslugi.uslugi': ApiUslugiUslugi;
       'api::vypolnennye-raboty.vypolnennye-raboty': ApiVypolnennyeRabotyVypolnennyeRaboty;
       'plugin::content-releases.release': PluginContentReleasesRelease;
