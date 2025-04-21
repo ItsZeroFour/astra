@@ -11,6 +11,7 @@ import CompletedWorks from "./pages/completed_works/CompletedWorks";
 import Services from "./pages/services/Services";
 import AboutWork from "./pages/about_work/AboutWork";
 import Loader from "./components/loader/Loader";
+import NotFoud from "./pages/404/NotFoud";
 
 function App() {
   const [services, setServices] = useState(null);
@@ -95,7 +96,7 @@ function App() {
                   path="/kontakty"
                   element={<Contacts contacts={contacts} />}
                 />
-                <Route path="/tarifs" element={<Tarifs />} />
+                <Route path="/tarify" element={<Tarifs />} />
                 <Route
                   path="/uslugi"
                   element={<Services services={services} />}
@@ -112,6 +113,8 @@ function App() {
                   path="/work/:id"
                   element={<AboutWork completedWorks={completedWorks} />}
                 />
+
+                <Route path="*" element={<NotFoud />} />
               </Routes>
             </main>
             <Footer contacts={contacts} handleClick={handleClick} />
