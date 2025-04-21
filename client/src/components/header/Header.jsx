@@ -35,7 +35,7 @@ const Header = ({ services, logo, handleClick }) => {
       <div className="container">
         <div className={style.header__wrapper}>
           <Link to="/" onClick={() => setOpenMenu(false)}>
-            <img src={`${process.env.REACT_APP_STRAPI_URL}${logo}`} alt="лого астра" />
+            <img src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${logo}`} alt="лого астра" />
           </Link>
 
           <nav>

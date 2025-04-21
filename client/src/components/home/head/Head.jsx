@@ -21,7 +21,7 @@ const Head = ({ head_title, head_text, head_images }) => {
           <div className={style.head__right}>
             <div className={style.head__right__wrapper}>
               {head_images.map((item) => (
-                <img src={`${process.env.REACT_APP_STRAPI_URL}${item.url}`} alt="дом" />
+                <img src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${item.url}`} alt="дом" />
               ))}
             </div>
           </div>

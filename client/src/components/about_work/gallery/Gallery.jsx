@@ -14,7 +14,7 @@ const Gallery = ({ work }) => {
             {work.images.map((item) => (
               <li>
                 <img
-                  src={`${process.env.REACT_APP_STRAPI_URL}${item.url}`}
+                  src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${item.url}`}
                   alt="выполненная работа"
                 />
               </li>

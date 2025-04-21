@@ -11,7 +11,7 @@ const List = ({ services }) => {
           {services.map((item, index) => (
             <li key={item.id} className={index % 2 !== 0 ? style.reversed : ""}>
               <img
-                src={`${process.env.REACT_APP_STRAPI_URL}${item.image.url}`}
+                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${item.image.url}`}
                 alt={item.title}
               />
 
