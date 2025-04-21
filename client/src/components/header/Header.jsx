@@ -85,7 +85,7 @@ const Header = ({ services, logo, handleClick }) => {
               </li>
 
               <li>
-                <Link to="/tarifs" onClick={() => setOpenMenu(false)}>
+                <Link to="/tarify" onClick={() => setOpenMenu(false)}>
                   ТАРИФЫ
                 </Link>
               </li>
