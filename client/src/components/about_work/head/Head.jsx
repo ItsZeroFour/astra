@@ -25,7 +25,7 @@ const Head = ({ work }) => {
 
           <p>
             <Link to="/">Главная</Link> /{" "}
-            <Link to="/completed-works">Услуги</Link>/ {work.title}
+            <Link to="/completed-works">Выполненные работы</Link>/ {work.title}
           </p>
         </div>
       </div>
