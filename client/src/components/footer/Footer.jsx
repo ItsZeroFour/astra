@@ -81,15 +81,15 @@ const Footer = ({ contacts, handleClick }) => {
                 </li>
 
                 <li>
-                  <Link to="/services">Каталог услуг</Link>
+                  <Link to="/uslugi">Каталог услуг</Link>
                 </li>
 
                 <li>
-                  <Link to="/tarifs">Тарифы</Link>
+                  <Link to="/tarify">Тарифы</Link>
                 </li>
 
                 <li>
-                  <Link to="/contacts">Контакты</Link>
+                  <Link to="/kontakty">Контакты</Link>
                 </li>
               </ul>
             </nav>

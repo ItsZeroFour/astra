@@ -2,8 +2,7 @@ import React from "react";
 import style from "./head.module.scss";
 import { Link } from "react-router-dom";
 
-const Head = ({ head_title, head_text, head_images }) => {
-
+const Head = ({ head_title, head_text, head_images, handleClick }) => {
   return (
     <section className={style.head}>
       <div className="container">
@@ -13,15 +12,20 @@ const Head = ({ head_title, head_text, head_images }) => {
             <p>{head_text}</p>
 
             <div className={style.head__buttons}>
-              <Link to="/">Услуги</Link>
-              <Link to="/">О компании</Link>
+              <Link to="/uslugi">Услуги</Link>
+              <Link to="#" onClick={() => handleClick()}>
+                О компании
+              </Link>
             </div>
           </div>
 
           <div className={style.head__right}>
             <div className={style.head__right__wrapper}>
               {head_images.map((item) => (
-                <img src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${item.url}`} alt="дом" />
+                <img
+                  src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${item.url}`}
+                  alt="дом"
+                />
               ))}
             </div>
           </div>

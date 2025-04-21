@@ -87,16 +87,17 @@ function App() {
                       services={services}
                       completedWorks={completedWorks}
                       targetRef={targetRef}
+                      handleClick={handleClick}
                     />
                   }
                 />
                 <Route
-                  path="/contacts"
+                  path="/kontakty"
                   element={<Contacts contacts={contacts} />}
                 />
                 <Route path="/tarifs" element={<Tarifs />} />
                 <Route
-                  path="/services"
+                  path="/uslugi"
                   element={<Services services={services} />}
                 />
                 <Route
@@ -104,7 +105,7 @@ function App() {
                   element={<CompletedWorks completedWorks={completedWorks} />}
                 />
                 <Route
-                  path="/service/:id"
+                  path="/uslugi/:id"
                   element={<Service services={services} />}
                 />
                 <Route

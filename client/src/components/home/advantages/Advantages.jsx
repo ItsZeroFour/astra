@@ -3,11 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import style from "./advantages.module.scss";
-import advantagesIcon1 from "../../../assets/icons/advantages/advantages-icon-1.svg";
-import advantagesIcon2 from "../../../assets/icons/advantages/advantages-icon-2.svg";
-import advantagesIcon3 from "../../../assets/icons/advantages/advantages-icon-3.svg";
-import advantagesIcon4 from "../../../assets/icons/advantages/advantages-icon-4.svg";
-import advantagesIcon5 from "../../../assets/icons/advantages/advantages-icon-5.svg";
 
 import arrowRight from "../../../assets/icons/arrow-right.svg";
 import arrowRight2 from "../../../assets/icons/arrow-right-2.svg";
@@ -125,7 +120,7 @@ const Advantages = ({
                       ? `${service.description.slice(0, 150)}...`
                       : service.description}
                   </p>
-                  <Link to={`/service/${service.id}`}>
+                  <Link to={`/uslugi/${service.id}`}>
                     ПОДРОБНЕЕ <img src={arrowRight} alt="Подробнее" />
                   </Link>
                 </div>
@@ -133,7 +128,7 @@ const Advantages = ({
             ))}
           </Slider>
 
-          <Link to={`/services`}>
+          <Link to={`/uslugi`}>
             КО ВСЕМ УСЛУГАМ <img src={arrowRight2} alt="КО ВСЕМ УСЛУГАМ" />
           </Link>
         </div>

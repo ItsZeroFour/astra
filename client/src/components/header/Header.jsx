@@ -72,7 +72,7 @@ const Header = ({ services, logo, handleClick }) => {
                       {services.map((item) => (
                         <li>
                           <Link
-                            to={`/service/${item.id}`}
+                            to={`/uslugi/${item.id}`}
                             onClick={() => setOpenMenu(false)}
                           >
                             {item.title}
@@ -91,7 +91,7 @@ const Header = ({ services, logo, handleClick }) => {
               </li>
 
               <li>
-                <Link to="/contacts" onClick={() => setOpenMenu(false)}>
+                <Link to="/kontakty" onClick={() => setOpenMenu(false)}>
                   КОНТАКТЫ
                 </Link>
               </li>
@@ -136,7 +136,7 @@ const Header = ({ services, logo, handleClick }) => {
                       {services.map((item) => (
                         <li>
                           <Link
-                            to={`/service/${item.id}`}
+                            to={`/uslugi/${item.id}`}
                             onClick={() => setOpenMenu(false)}
                           >
                             {item.title}
@@ -148,13 +148,13 @@ const Header = ({ services, logo, handleClick }) => {
                 </li>
 
                 <li>
-                  <Link to="/tarifs" onClick={() => setOpenMenu(false)}>
+                  <Link to="/tarify" onClick={() => setOpenMenu(false)}>
                     ТАРИФЫ
                   </Link>
                 </li>
 
                 <li>
-                  <Link to="/contacts" onClick={() => setOpenMenu(false)}>
+                  <Link to="/kontakty" onClick={() => setOpenMenu(false)}>
                     КОНТАКТЫ
                   </Link>
                 </li>
