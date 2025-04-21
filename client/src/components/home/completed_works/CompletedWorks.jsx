@@ -44,7 +44,7 @@ const CompletedWorks = ({ completedWorks }) => {
               <div key={work.id} className={style.work__slide}>
                 <div className={style.completed_works__item}>
                   <img
-                    src={`http://localhost:1337${work.image.url}`}
+                    src={`${process.env.REACT_APP_STRAPI_URL}${work.image.url}`}
                     alt={work.title}
                   />
                   <div className={style.completed_works__item__text}>

@@ -17,7 +17,7 @@ const Tarifs = () => {
     const fetchTarifs = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/tarify?populate=*"
+          `${process.env.REACT_APP_STRAPI_URL}/api/tarify?populate=*`
         );
 
         setTarifs(response.data.data);
@@ -33,7 +33,7 @@ const Tarifs = () => {
     const fetchTarifs = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/spisok-tarifovs?populate=*"
+          `${process.env.REACT_APP_STRAPI_URL}/api/spisok-tarifovs?populate=*`
         );
 
         setListOfTarifs(response.data.data);

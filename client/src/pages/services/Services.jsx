@@ -15,7 +15,7 @@ const Services = ({ services }) => {
     const fetchServices = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/stranicza-uslug?populate=*"
+          `${process.env.REACT_APP_STRAPI_URL}/api/stranicza-uslug?populate=*`
         );
 
         setServicesItems(response.data.data);

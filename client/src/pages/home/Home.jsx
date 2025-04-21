@@ -17,7 +17,7 @@ const Home = ({ services, completedWorks, targetRef }) => {
     const fetchServices = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/glavnaya?populate=*"
+          `${process.env.REACT_APP_STRAPI_URL}/api/glavnaya?populate=*`
         );
 
         setHome(response.data.data);

@@ -21,7 +21,7 @@ function App() {
     const fetchServices = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/uslugis?populate=*"
+          `${process.env.REACT_APP_STRAPI_URL}/api/uslugis?populate=*`
         );
         setServices(response.data.data);
       } catch (error) {
@@ -36,7 +36,7 @@ function App() {
     const fetchServices = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/vypolnennye-raboties?populate=*"
+          `${process.env.REACT_APP_STRAPI_URL}/api/vypolnennye-raboties?populate=*`
         );
         setCompletedWorks(response.data.data);
       } catch (error) {
@@ -51,7 +51,7 @@ function App() {
     const fetchContacts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/kontakty?populate=*"
+          `${process.env.REACT_APP_STRAPI_URL}/api/kontakty?populate=*`
         );
         setContacts(response.data.data);
       } catch (error) {

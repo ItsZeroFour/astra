@@ -14,7 +14,7 @@ const CompletedWorks = ({ completedWorks }) => {
     const fetchCompletedWorks = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/stranicza-vypolnennyh-rabot?populate=*"
+          `${process.env.REACT_APP_STRAPI_URL}/api/stranicza-vypolnennyh-rabot?populate=*`
         );
 
         setCompletedWorksItems(response.data.data);

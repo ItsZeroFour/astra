@@ -11,7 +11,7 @@ const List = ({ completedWorks }) => {
             {completedWorks.map((item) => (
               <li key={item.id}>
                 <img
-                  src={`http://localhost:1337${item.image.url}`}
+                  src={`${process.env.REACT_APP_STRAPI_URL}${item.image.url}`}
                   alt={item.title}
                 />
 
