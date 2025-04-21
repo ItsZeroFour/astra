@@ -1,0 +1,50 @@
+{
+    "kind": "singleType",
+    "collectionName": "kontakties",
+    "info": {
+        "singularName": "kontakty",
+        "pluralName": "kontakties",
+        "displayName": "Контакты",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "phone": {
+            "type": "string"
+        },
+        "mail": {
+            "type": "email"
+        },
+        "time": {
+            "type": "string"
+        },
+        "vk_link": {
+            "type": "string"
+        },
+        "telegram_link": {
+            "type": "string"
+        },
+        "whatsapp_link": {
+            "type": "string"
+        },
+        "logo": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "address": {
+            "type": "string"
+        },
+        "map_link": {
+            "type": "text"
+        }
+    }
+}

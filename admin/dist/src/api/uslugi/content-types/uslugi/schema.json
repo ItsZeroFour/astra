@@ -1,0 +1,50 @@
+{
+    "kind": "collectionType",
+    "collectionName": "uslugis",
+    "info": {
+        "singularName": "uslugi",
+        "pluralName": "uslugis",
+        "displayName": "Услуги",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "title_about": {
+            "type": "string"
+        },
+        "text_about": {
+            "type": "text"
+        },
+        "images": {
+            "type": "media",
+            "multiple": true,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files"
+            ]
+        },
+        "type": {
+            "type": "string"
+        }
+    }
+}

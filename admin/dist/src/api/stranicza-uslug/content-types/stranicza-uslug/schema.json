@@ -1,0 +1,20 @@
+{
+    "kind": "singleType",
+    "collectionName": "stranicza_uslugs",
+    "info": {
+        "singularName": "stranicza-uslug",
+        "pluralName": "stranicza-uslugs",
+        "displayName": "Страница услуг"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "text": {
+            "type": "text"
+        }
+    }
+}

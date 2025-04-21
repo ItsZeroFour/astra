@@ -1,0 +1,51 @@
+{
+    "kind": "collectionType",
+    "collectionName": "vypolnennye_raboties",
+    "info": {
+        "singularName": "vypolnennye-raboty",
+        "pluralName": "vypolnennye-raboties",
+        "displayName": "Выполненные работы",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        },
+        "full_description": {
+            "type": "text"
+        },
+        "title_about": {
+            "type": "string"
+        },
+        "text_about": {
+            "type": "text"
+        },
+        "images": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": true
+        }
+    }
+}
