@@ -27,7 +27,7 @@ const Footer = ({ contacts, handleClick }) => {
         <div className={style.footer__wrapper}>
           <div className={style.footer__left}>
             <img
-              src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${contacts?.logo.url}`}
+              src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${contacts?.logo?.url}`}
               alt="Астра"
             />
 

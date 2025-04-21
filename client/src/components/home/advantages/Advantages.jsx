@@ -64,7 +64,7 @@ const Advantages = ({
           <ul>
             <li>
               <img
-                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${advantages_item_1_icon.url}`}
+                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${advantages_item_1_icon?.url}`}
                 alt={advantages_item_1_text}
               />
               <p>{advantages_item_1_text}</p>
@@ -72,7 +72,7 @@ const Advantages = ({
 
             <li>
               <img
-                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${advantages_item_2_icon.url}`}
+                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${advantages_item_2_icon?.url}`}
                 alt={advantages_item_2_text}
               />
               <p>{advantages_item_2_text}</p>
@@ -80,7 +80,7 @@ const Advantages = ({
 
             <li>
               <img
-                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${advantages_item_3_icon.url}`}
+                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${advantages_item_3_icon?.url}`}
                 alt={advantages_item_3_text}
               />
               <p>{advantages_item_3_text}</p>
@@ -88,7 +88,7 @@ const Advantages = ({
 
             <li>
               <img
-                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${advantages_item_4_icon.url}`}
+                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${advantages_item_4_icon?.url}`}
                 alt={advantages_item_4_text}
               />
               <p>{advantages_item_4_text}</p>
@@ -96,7 +96,7 @@ const Advantages = ({
 
             <li>
               <img
-                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${advantages_item_5_icon.url}`}
+                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${advantages_item_5_icon?.url}`}
                 alt={advantages_item_5_text}
               />
               <p>{advantages_item_5_text}</p>
@@ -113,7 +113,7 @@ const Advantages = ({
                 <div
                   className={style.service__item}
                   style={{
-                    backgroundImage: `url(${process.env.REACT_APP_STRAPI_URL_IMAGE}${service.image.url})`,
+                    backgroundImage: `url(${process.env.REACT_APP_STRAPI_URL_IMAGE}${service?.image?.url})`,
                   }}
                 >
                   <h3>{service.title}</h3>
