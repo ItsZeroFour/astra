@@ -14,7 +14,7 @@ const Head = ({ tarifs, listOfTarifs }) => {
             <h1>{tarifs.title}</h1>
             <p>{tarifs.text}</p>
 
-            <Link to="/">
+            <Link to="#">
               <img src={arrowBottom} alt="arrow" />
             </Link>
           </div>
