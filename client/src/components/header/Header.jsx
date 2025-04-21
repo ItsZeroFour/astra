@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./header.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import angleDown from "../../assets/icons/angle-down.svg";
 import angleDown2 from "../../assets/icons/angle-down-2.svg";
@@ -9,6 +9,8 @@ const Header = ({ services, logo, handleClick }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const [openMenuServices, setOpenMenuServices] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleMouseEnter = () => {
     setIsCatalogOpen(true);
@@ -35,7 +37,10 @@ const Header = ({ services, logo, handleClick }) => {
       <div className="container">
         <div className={style.header__wrapper}>
           <Link to="/" onClick={() => setOpenMenu(false)}>
-            <img src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${logo}`} alt="лого астра" />
+            <img
+              src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${logo}`}
+              alt="лого астра"
+            />
           </Link>
 
           <nav>
@@ -56,7 +61,7 @@ const Header = ({ services, logo, handleClick }) => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <button>
+                <button onClick={() => navigate("/uslugi")}>
                   КАТАЛОГ УСЛУГ <img src={angleDown} alt="angle" />
                 </button>
 
