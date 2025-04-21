@@ -12,7 +12,7 @@ const Gallery = ({ service }) => {
             {service.images.map((item) => (
               <li>
                 <img
-                  src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${item.url}`}
+                  src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${item?.url}`}
                   alt="выполненная работа"
                 />
               </li>

@@ -23,7 +23,7 @@ const Head = ({ head_title, head_text, head_images, handleClick }) => {
             <div className={style.head__right__wrapper}>
               {head_images.map((item) => (
                 <img
-                  src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${item.url}`}
+                  src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${item?.url}`}
                   alt="дом"
                 />
               ))}

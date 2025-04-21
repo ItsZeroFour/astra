@@ -8,7 +8,7 @@ const Head = ({ work }) => {
   useEffect(() => {
     if (work.image?.url) {
       setBgStyle({
-        backgroundImage: `url(${process.env.REACT_APP_STRAPI_URL_IMAGE}${work.image.url})`,
+        backgroundImage: `url(${process.env.REACT_APP_STRAPI_URL_IMAGE}${work?.image?.url})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",

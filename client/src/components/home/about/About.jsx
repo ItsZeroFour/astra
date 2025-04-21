@@ -35,7 +35,7 @@ const About = ({
 
             <div className={style.about__top__right}>
               <img
-                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${about_image.url}`}
+                src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${about_image?.url}`}
                 alt="about"
               />
             </div>
@@ -46,7 +46,7 @@ const About = ({
               <li className={style.about__main__item}>
                 <div className={style.aboutListItemIcon}>
                   <img
-                    src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${about_item_1_icon.url}`}
+                    src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${about_item_1_icon?.url}`}
                     alt={about_item_1_title}
                   />
                 </div>
@@ -59,7 +59,7 @@ const About = ({
               <li className={style.about__main__item}>
                 <div className={style.aboutListItemIcon}>
                   <img
-                    src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${about_item_2_icon.url}`}
+                    src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${about_item_2_icon?.url}`}
                     alt={about_item_2_title}
                   />
                 </div>
@@ -72,7 +72,7 @@ const About = ({
               <li className={style.about__main__item}>
                 <div className={style.aboutListItemIcon}>
                   <img
-                    src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${about_item_3_icon.url}`}
+                    src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${about_item_3_icon?.url}`}
                     alt={about_item_3_title}
                   />
                 </div>
@@ -85,7 +85,7 @@ const About = ({
               <li className={style.about__main__item}>
                 <div className={style.aboutListItemIcon}>
                   <img
-                    src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${about_item_4_icon.url}`}
+                    src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${about_item_4_icon?.url}`}
                     alt={about_item_4_title}
                   />
                 </div>
