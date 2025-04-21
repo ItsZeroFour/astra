@@ -6,7 +6,7 @@ import CompletedWorks from "../../components/home/completed_works/CompletedWorks
 import axios from "axios";
 import Loader from "../../components/loader/Loader";
 
-const Home = ({ services, completedWorks, targetRef }) => {
+const Home = ({ services, completedWorks, targetRef, handleClick }) => {
   const [home, setHome] = useState(null);
 
   useEffect(() => {
@@ -39,6 +39,7 @@ const Home = ({ services, completedWorks, targetRef }) => {
             head_title={home.head_title}
             head_text={home.head_text}
             head_images={home.head_images}
+            handleClick={handleClick}
           />
           <About
             about_title={home.about_title}

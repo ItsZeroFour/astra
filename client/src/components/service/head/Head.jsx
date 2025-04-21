@@ -7,7 +7,7 @@ const Head = ({ service }) => {
   useEffect(() => {
     if (service.image?.url) {
       setBgStyle({
-        backgroundImage: `url(${process.env.REACT_APP_STRAPI_URL}${service.image.url})`,
+        backgroundImage: `url(${process.env.REACT_APP_STRAPI_URL_IMAGE}${service.image.url})`,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundSize: "cover",
