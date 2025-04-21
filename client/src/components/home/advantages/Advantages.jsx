@@ -35,6 +35,8 @@ const Advantages = ({
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay: true, // Включаем автопрокрутку
+    autoplaySpeed: 3000, // Интервал между переключениями (в миллисекундах)
     responsive: [
       {
         breakpoint: 1024,
