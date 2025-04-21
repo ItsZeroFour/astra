@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./head.module.scss";
+import { Link } from "react-router-dom";
 
 const Head = ({ work }) => {
   const [bgStyle, setBgStyle] = useState({});
@@ -22,7 +23,10 @@ const Head = ({ work }) => {
           <h1>{work.title}</h1>
           <p>{work.description}</p>
 
-          <p>Главная / Услуги/ {work.title}</p>
+          <p>
+            <Link to="/">Главная</Link> /{" "}
+            <Link to="/completed-works">Услуги</Link>/ {work.title}
+          </p>
         </div>
       </div>
     </section>
