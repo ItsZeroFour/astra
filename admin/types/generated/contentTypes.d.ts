@@ -521,6 +521,7 @@ export interface ApiStraniczaUslugStraniczaUslug
   extends Struct.SingleTypeSchema {
   collectionName: 'stranicza_uslugs';
   info: {
+    description: '';
     displayName: '\u0421\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u0443\u0441\u043B\u0443\u0433';
     pluralName: 'stranicza-uslugs';
     singularName: 'stranicza-uslug';
@@ -532,6 +533,7 @@ export interface ApiStraniczaUslugStraniczaUslug
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    image_bg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -551,6 +553,7 @@ export interface ApiStraniczaVypolnennyhRabotStraniczaVypolnennyhRabot
   extends Struct.SingleTypeSchema {
   collectionName: 'stranicza_vypolnennyh_rabots';
   info: {
+    description: '';
     displayName: '\u0421\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043D\u044B\u0445 \u0440\u0430\u0431\u043E\u0442';
     pluralName: 'stranicza-vypolnennyh-rabots';
     singularName: 'stranicza-vypolnennyh-rabot';
@@ -562,6 +565,7 @@ export interface ApiStraniczaVypolnennyhRabotStraniczaVypolnennyhRabot
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    image_bg: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -629,9 +633,11 @@ export interface ApiUslugiUslugi extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    images: Schema.Attribute.Media<'images' | 'files', true>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    images: Schema.Attribute.Media<'images' | 'files', true> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -639,10 +645,10 @@ export interface ApiUslugiUslugi extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    text_about: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
-    title_about: Schema.Attribute.String;
-    type: Schema.Attribute.String;
+    text_about: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title_about: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
