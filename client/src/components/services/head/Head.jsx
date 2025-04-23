@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 
 const Head = ({ servicesItems }) => {
   return (
-    <section className={style.head}>
+    <section
+      className={style.head}
+      style={{
+        backgroundImage: `url(${process.env.REACT_APP_STRAPI_URL_IMAGE}${servicesItems?.image_bg?.url})`,
+      }}
+    >
       <div className="container">
         <div className={style.head__wrapper}>
           <h1>{servicesItems.title}</h1>

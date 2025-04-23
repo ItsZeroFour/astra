@@ -1,8 +1,5 @@
 .head {
-  display: flex;
-  flex-direction: column;
-
-  height: 95vh;
+  height: 90vh;
   width: 100vw;
   background: var(--color-blue);
 
@@ -10,12 +7,18 @@
     height: 100%;
     padding-bottom: 120px;
   }
+
+  @media (min-width: 2260px) {
+    height: 70vh;
+  }
 }
 
 .head__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  position: relative;
 
   @media (max-width: 1290px) {
     justify-content: start;
