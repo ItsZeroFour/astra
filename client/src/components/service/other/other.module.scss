@@ -62,6 +62,10 @@
       @media (max-width: 960px) {
         width: 100%;
       }
+
+      @media (max-width: 520px) {
+        height: 150px;
+      }
     }
 
     @media (max-width: 960px) {
