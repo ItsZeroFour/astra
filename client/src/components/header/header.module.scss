@@ -45,7 +45,7 @@
       }
     }
 
-    @media (max-width: 780px) {
+    @media (max-width: 980px) {
       display: none;
     }
   }
@@ -83,7 +83,7 @@
 .header__menu {
   display: none;
 
-  @media (max-width: 780px) {
+  @media (max-width: 980px) {
     display: block;
 
     width: 30px;
