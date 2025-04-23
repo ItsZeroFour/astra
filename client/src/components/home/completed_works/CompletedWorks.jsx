@@ -43,7 +43,11 @@ const CompletedWorks = ({ completedWorks }) => {
 
           <Slider {...sliderSettings} className={style.works__slider}>
             {completedWorks.slice(0, 8).map((work) => (
-              <div key={work.id} className={style.work__slide}>
+              <Link
+                to={`/work/${work.id}`}
+                key={work.id}
+                className={style.work__slide}
+              >
                 <div className={style.completed_works__item}>
                   <img
                     src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${work?.image?.url}`}
@@ -57,7 +61,7 @@ const CompletedWorks = ({ completedWorks }) => {
                     ПОДРОБНЕЕ <img src={arrowRight} alt="ПОДРОБНЕЕ" />
                   </Link>
                 </div>
-              </div>
+              </Link>
             ))}
           </Slider>
 

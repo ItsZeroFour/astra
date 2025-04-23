@@ -58,11 +58,25 @@
         height: 100px;
         padding: 5px;
       }
+
+      @media (max-width: 520px) {
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+      }
     }
 
     @media (max-width: 760px) {
       flex-direction: column;
       width: 100%;
+    }
+
+    @media (max-width: 520px) {
+      display: flex;
     }
   }
 

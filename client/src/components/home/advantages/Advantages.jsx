@@ -109,7 +109,7 @@ const Advantages = ({
 
           <Slider {...sliderSettings} className={style.services__slider}>
             {services.slice(0, 8).map((service) => (
-              <div key={service.id} className={style.service__slide}>
+              <Link to={`/uslugi/${service.id}`} key={service.id} className={style.service__slide}>
                 <div
                   className={style.service__item}
                   style={{
@@ -126,7 +126,7 @@ const Advantages = ({
                     ПОДРОБНЕЕ <img src={arrowRight} alt="Подробнее" />
                   </Link>
                 </div>
-              </div>
+              </Link>
             ))}
           </Slider>
 
