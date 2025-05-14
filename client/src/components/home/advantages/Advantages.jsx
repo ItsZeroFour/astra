@@ -155,7 +155,7 @@ const Advantages = ({
           <Slider {...sliderSettings} className={style.services__slider}>
             {services.slice(0, 8).map((service) => (
               <Link
-                to={`/uslugi/${service.id}`}
+                to={`/${service.url}`}
                 key={service.id}
                 className={style.service__slide}
               >
