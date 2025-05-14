@@ -96,6 +96,12 @@ const Header = ({ services, logo, handleClick }) => {
               </li>
 
               <li>
+                <Link to="/completed-works" onClick={() => setOpenMenu(false)}>
+                  ВЫПОЛНЕННЫЕ РАБОТЫ
+                </Link>
+              </li>
+
+              <li>
                 <Link to="/kontakty" onClick={() => setOpenMenu(false)}>
                   КОНТАКТЫ
                 </Link>
@@ -155,6 +161,15 @@ const Header = ({ services, logo, handleClick }) => {
                 <li>
                   <Link to="/tarify" onClick={() => setOpenMenu(false)}>
                     ТАРИФЫ
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/completed-works"
+                    onClick={() => setOpenMenu(false)}
+                  >
+                    ВЫПОЛНЕННЫЕ РАБОТЫ
                   </Link>
                 </li>
 
