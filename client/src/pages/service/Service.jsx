@@ -16,13 +16,13 @@ const Service = ({ services }) => {
   }, []);
 
   useEffect(() => {
-    const filterItems = services.filter((item) => item.id === +id)[0];
+    const filterItems = services.filter((item) => item.url === id)[0];
 
     setService(filterItems);
   }, [services, id]);
 
   useEffect(() => {
-    const filterItems = services.filter((item) => item.id !== +id).slice(0, 4);
+    const filterItems = services.filter((item) => item.url !== id).slice(0, 4);
 
     setOtherServies(filterItems);
   }, [services, id]);

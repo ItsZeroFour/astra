@@ -122,7 +122,7 @@ const Advantages = ({
                       ? `${service.description.slice(0, 150)}...`
                       : service.description}
                   </p>
-                  <Link to={`/uslugi/${service.id}`}>
+                  <Link to={`/${service.url}`}>
                     ПОДРОБНЕЕ <img src={arrowRight} alt="Подробнее" />
                   </Link>
                 </div>

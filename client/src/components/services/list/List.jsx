@@ -24,7 +24,7 @@ const List = ({ services }) => {
                     : item.description}
                 </p>
 
-                <Link to={`/uslugi/${item.id}`}>Подробнее</Link>
+                <Link to={`/${item.url}`}>Подробнее</Link>
               </div>
             </li>
           ))}

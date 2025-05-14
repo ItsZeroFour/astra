@@ -19,7 +19,7 @@ const Other = ({ otherServies }) => {
               <li key={item.id}>
                 <p>{item.type}</p>
                 <h4>{item.title}</h4>
-                <Link to={`/uslugi/${item.id}`} onClick={scrollToTop}>
+                <Link to={`/${item.url}`} onClick={scrollToTop}>
                   ПОДРОБНЕЕ <img src={arrowRight} alt="ПОДРОБНЕЕ" />
                 </Link>
               </li>

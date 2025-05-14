@@ -106,7 +106,7 @@ function App() {
                   element={<CompletedWorks completedWorks={completedWorks} />}
                 />
                 <Route
-                  path="/uslugi/:id"
+                  path="/:id"
                   element={<Service services={services} />}
                 />
                 <Route
