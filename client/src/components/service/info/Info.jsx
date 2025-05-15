@@ -10,7 +10,13 @@ const Info = ({ service }) => {
           <div className={style.info__left}>
             <h3>{service.title_about}</h3>
 
-            <p>{service.text_about}</p>
+            <p>
+              {service.text_about
+                .split(/(<br\s?\/?>)/i)
+                .map((part, index) =>
+                  part.toLowerCase().includes("<br") ? <br key={index} /> : part
+                )}
+            </p>
           </div>
 
           <div className={style.info__right}>
