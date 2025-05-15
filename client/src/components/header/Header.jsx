@@ -147,7 +147,7 @@ const Header = ({ services, logo, handleClick }) => {
                       {services.map((item) => (
                         <li>
                           <Link
-                            to={`/uslugi/${item.id}`}
+                            to={`/${item.url}`}
                             onClick={() => setOpenMenu(false)}
                           >
                             {item.title}
