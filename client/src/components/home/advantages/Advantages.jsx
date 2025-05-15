@@ -179,7 +179,11 @@ const Advantages = ({
             ))}
           </Slider>
 
-          <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+          <motion.div
+            whileHover={{ x: 5 }}
+            transition={{ duration: 0.2 }}
+            className={style.service__link}
+          >
             <Link to={`/uslugi`}>
               КО ВСЕМ УСЛУГАМ <img src={arrowRight2} alt="КО ВСЕМ УСЛУГАМ" />
             </Link>

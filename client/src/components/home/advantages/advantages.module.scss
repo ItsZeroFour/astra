@@ -218,7 +218,9 @@
 
 .services__wrapper {
   position: relative;
+}
 
+.service__link {
   & > a {
     margin-top: 60px;
     font-size: 20px;
