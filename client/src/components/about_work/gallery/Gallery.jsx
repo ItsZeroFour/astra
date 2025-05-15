@@ -1,25 +1,52 @@
 import React from "react";
 import style from "./gallery.module.scss";
-
-import galleryImg1 from "../../../assets/images/services/gallery-1.png";
-import galleryImg2 from "../../../assets/images/services/gallery-2.png";
-import galleryImg3 from "../../../assets/images/services/gallery-3.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Gallery = ({ work }) => {
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true, // Включаем автопрокрутку
+    autoplaySpeed: 3000, // Интервал между переключениями (в миллисекундах)
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section className={style.gallery}>
       <div className="container">
         <div className={style.gallery__wrapper}>
-          <ul>
+          <Slider {...sliderSettings} className={style.works__slider}>
             {work.images.map((item) => (
-              <li>
-                <img
-                  src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${item?.url}`}
-                  alt="выполненная работа"
-                />
-              </li>
+              <div className={style.completed_works__item}>
+                <li>
+                  <img
+                    src={`${process.env.REACT_APP_STRAPI_URL_IMAGE}${item?.url}`}
+                    alt="выполненная работа"
+                  />
+                </li>
+              </div>
             ))}
-          </ul>
+          </Slider>
         </div>
       </div>
     </section>
